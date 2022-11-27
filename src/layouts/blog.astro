@@ -4,7 +4,7 @@ import Layout from '../layouts/layout.astro';
 const {frontmatter} = Astro.props;
 ---
 <Layout title={ frontmatter.title }>
-	<main>
+	<main class="prose prose-xl">
 		<h1>{ frontmatter.title }</h1>
 
 		{frontmatter.image && (
@@ -19,7 +19,8 @@ const {frontmatter} = Astro.props;
 		<slot />
 
 		Author: { frontmatter.author }<br/>
-		Published on: {frontmatter.date && <time>{frontmatter.date}</time>}
+		Published on: {new Date(frontmatter.date).toLocaleDateString('en-GB')}
+
 		<ul>
 		{ frontmatter.tags.map( tag => <li>{ tag }</li> ) }
 		</ul>

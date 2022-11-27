@@ -1,9 +1,6 @@
 ---
-import Header from '../../components/header.astro';
-import Footer from '../../components/footer.astro';
+import Layout from '../../layouts/layout.astro';
 import PostLink from '../../components/postLink.astro';
-
-import '../../styles/global.css';
 
 export async function getStaticPaths({ paginate }) {
   const posts = (await Astro.glob('./*.{md,mdx}')).sort(
@@ -18,28 +15,16 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props;
 
 ---
+<Layout title="Blog">
+	<main>
+		<h1>🧑‍🚀 Hello, Astronaut!</h1>
+		<ul>
+		{page.data.map((post) => (
+			<PostLink post={post} />
+		))}
+		</ul>
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Home</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-
-	</head>
-	<body id="content">
-		<Header pageTitle="Astro Challenge" />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-            <ul>
-			{page.data.map((post) => (
-                <PostLink post={post} />
-            ))}
-            </ul>
-
-            {page.url.prev ? <a href={page.url.prev}>Previous</a> : null}
-            {page.url.next ? <a href={page.url.next}>Next</a> : null}
-		</main>
-		<Footer />
-	</body>
-</html>
+		{page.url.prev ? <a href={page.url.prev}>Previous</a> : null}
+		{page.url.next ? <a href={page.url.next}>Next</a> : null}
+	</main>
+</Layout>

@@ -1,17 +1,19 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
----
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
 
+import '../styles/global.css';
+---
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<title>Home</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+
 	</head>
-	<body>
-		<Header title={SITE_TITLE} />
+	<body id="content">
+		<Header pageTitle="Astro Challenge" />
 		<main>
 			<h1>🧑‍🚀 Hello, Astronaut!</h1>
 			<p>

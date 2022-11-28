@@ -1,5 +1,5 @@
 ---
-title: My First Post in Astro
+title: Lorem ipsum dolor sit amet
 tags: ["blog", "jamstack"]
 date: 2022-11-10
 author: Maciek Palmowski

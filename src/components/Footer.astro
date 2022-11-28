@@ -1,7 +1,10 @@
 ---
 const today = new Date();
+const { pageTitle = "Default title" } = Astro.props;
 ---
 
-<footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+<footer class="p-7 bg-white border-t-2 border-[rgba(0,0,0,0.04)] text-sm text-slate-400">
+	<div class="container mx-auto lg:text-left text-center">
+		&copy; {today.getFullYear()} <a href="https://kinsta.com/" target="_blank" class="font-bold hover:text-kinsta-violet ease-in duration-300">{ pageTitle } by Kinsta.com</a>. All rights reserved. Kinsta® is registered trademark. <a class="text-kinsta-violet hover:text-kinsta-pink-dark" href="https://kinsta.com/legal/" target="_blank">Legal information</a>
+	</div>
 </footer>

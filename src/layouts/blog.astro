@@ -4,8 +4,8 @@ import Layout from '../layouts/layout.astro';
 const {frontmatter} = Astro.props;
 ---
 <Layout title={ frontmatter.title }>
-	<main class="prose prose-xl">
-		<h1>{ frontmatter.title }</h1>
+	<main class="prose lg:prose-xl p-7">
+		<h1 class="text-kinsta-violet-dark">{ frontmatter.title }</h1>
 
 		{frontmatter.image && (
 			<img
